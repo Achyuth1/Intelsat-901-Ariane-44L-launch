@@ -148,18 +148,31 @@ for t in time[1:events["7third stage end"]+1]:
 			M[-1] = M[-1] - inert_mass["stage3"]
 			
 clearCanvas()
+
+plt.xlabel('X (metres)')
+plt.ylabel('H (metres)')
+plt.title("H vs X")
 plt.plot(X, H)
 plt.savefig("H_X.png")
 plt.close()
 
+plt.xlabel('Time (sec))')
+plt.ylabel('Mass (Kg)')
+plt.title("Mass vs Time")
 plt.plot(time[:len(M)], M)
 plt.savefig("M.png")
 plt.close()
 
+plt.xlabel('Time (sec)')
+plt.ylabel('Speed (m/s)')
+plt.title("Speed vs Time")
 plt.plot(time[:len(V)], V)
 plt.savefig("V.png")
 plt.close()
 
-plt.plot([i*180/pi for i in Theta])
+plt.xlabel('Time (sec)')
+plt.ylabel('Theta (degrees)')
+plt.title("Theta vs Time")
+plt.plot(time[10:10+len(Theta)],[i*180/pi for i in Theta])
 plt.savefig("Theta.png")
 plt.close()
